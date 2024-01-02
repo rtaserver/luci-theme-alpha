@@ -122,3 +122,7 @@ jobs:
         with:
           tag_name: ${{needs.job_check.outputs.alpha_version}}
           files: ${{ env.FIRMWARE }}/base/luci-theme*.ipk
+      - name: Clear caches
+        uses: easimon/wipe-cache@main
+        with:
+          dry-run: 'true'
